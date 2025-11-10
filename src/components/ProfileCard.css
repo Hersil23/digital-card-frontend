@@ -1,141 +1,79 @@
-/* Importar fuente Poppins (la del ejemplo) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Contenedor principal */
-.profile-card-container {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 10;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Wrapper para el efecto de borde animado */
 .profile-card-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 380px;
-  animation: fadeInScale 0.8s ease-out;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-/* Borde animado con gradiente */
-.profile-card-border {
-  position: absolute;
-  inset: -2px;
-  border-radius: 24px;
-  padding: 2px;
-  background: linear-gradient(
-    135deg,
-    rgba(100, 150, 200, 0.4),
-    rgba(138, 43, 226, 0.3),
-    rgba(0, 191, 255, 0.4),
-    rgba(100, 150, 200, 0.4)
-  );
-  background-size: 300% 300%;
-  animation: borderGlow 6s ease infinite;
-  opacity: 0.6;
-  z-index: -1;
-  filter: blur(8px);
-}
-
-@keyframes borderGlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Tarjeta principal - Gris oscuro con glassmorphism */
 .profile-card {
   position: relative;
+  background: linear-gradient(135deg, 
+    rgba(0, 217, 255, 0.3) 0%, 
+    rgba(138, 43, 226, 0.3) 50%, 
+    rgba(0, 217, 255, 0.3) 100%);
+  background-size: 200% 200%;
+  padding: 2px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  max-width: 400px;
   width: 100%;
-  padding: 2rem 1.5rem;
-  border-radius: 22px;
-  
-  /* Fondo gris oscuro como la referencia */
-  background: rgba(30, 41, 59, 0.85);
+}
+
+.profile-card-content {
+  background: rgba(30, 30, 40, 0.85);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  
-  /* Borde gris sutil */
-  border: 1px solid rgba(71, 85, 105, 0.4);
-  
-  /* Sombras para profundidad */
-  box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  
-  /* Transición suave */
-  transition: transform 0.3s ease;
-}
-
-/* Efecto hover en la tarjeta */
-.profile-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Contenido interno */
-.profile-content {
+  border-radius: 18px;
+  padding: 2rem;
   text-align: center;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Estilos de texto */
 .profile-name {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0.5rem 0;
 }
 
 .profile-title {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #60A5FA;
-  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #00d9ff;
+  margin: 0.5rem 0;
 }
 
-/* Animación de entrada */
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+.profile-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0.5rem 0;
 }
 
-/* Responsive para tablets y desktop */
-@media (min-width: 640px) {
-  .profile-card-wrapper {
-    max-width: 420px;
-  }
-  
-  .profile-card {
-    padding: 2.5rem 2rem;
-  }
-  
+.profile-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive para mobile pequeño */
+@media (max-width: 375px) {
   .profile-name {
-    font-size: 2rem;
-  }
-}
-
-/* Responsive para pantallas muy pequeñas */
-@media (max-width: 360px) {
-  .profile-card {
-    padding: 1.5rem 1.25rem;
+    font-size: 1.5rem;
   }
   
-  .profile-name {
-    font-size: 1.625rem;
+  .profile-title {
+    font-size: 1rem;
+  }
+  
+  .profile-card-content {
+    padding: 1.5rem;
   }
 }
