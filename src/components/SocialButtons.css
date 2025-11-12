@@ -1,0 +1,64 @@
+.social-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 350px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(50, 50, 70, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border-left: 4px solid var(--border-color);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.social-button:hover {
+  transform: scale(1.05);
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-name {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 375px) {
+  .social-buttons-container {
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    max-width: 100%;
+  }
+
+  .social-button {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    border-left: 3px solid var(--border-color);
+  }
+
+  .social-icon {
+    font-size: 1.3rem;
+  }
+}

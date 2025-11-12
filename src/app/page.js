@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Background />
-      <ProfileCard />
+      <ProfileCard language={language} setLanguage={setLanguage} />
     </>
   );
 }
