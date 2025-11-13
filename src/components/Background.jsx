@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import './Background.css';
+import './background.css';
 
 export default function Background() {
   const [stars, setStars] = useState([]);
