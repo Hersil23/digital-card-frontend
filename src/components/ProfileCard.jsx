@@ -67,8 +67,8 @@ export default function ProfileCard({ language, setLanguage }) {
 
   const handleTitleHover = () => {
     gsap.to(titleRef.current, {
-      color: '#00ffff',
-      boxShadow: '0 0 15px rgba(0, 217, 255, 0.8), 0 0 30px rgba(0, 217, 255, 0.5)',
+      color: '#80d4ff',
+      boxShadow: '0 0 15px rgba(77, 184, 255, 0.8), 0 0 30px rgba(77, 184, 255, 0.5)',
       duration: 0.3,
       ease: 'power2.out'
     });
@@ -76,7 +76,7 @@ export default function ProfileCard({ language, setLanguage }) {
 
   const handleTitleHoverOut = () => {
     gsap.to(titleRef.current, {
-      color: '#00d9ff',
+      color: '#4db8ff',
       boxShadow: 'none',
       duration: 0.3,
       ease: 'power2.out'
@@ -96,6 +96,7 @@ export default function ProfileCard({ language, setLanguage }) {
             ref={titleRef}
             onMouseEnter={handleTitleHover}
             onMouseLeave={handleTitleHoverOut}
+            title={fullTitle}
           >
             {displayedTitle}
             {displayedTitle.length < fullTitle.length && <span className="typing-cursor">|</span>}
